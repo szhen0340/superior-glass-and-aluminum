@@ -30,15 +30,26 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
     }
 
     const formData = new FormData(e.currentTarget)
-    formData.append('access_key', '4b63ce26-8b65-44ca-9ff0-5dfa98b4c04e')
-    formData.append('subject', 'New Lead from Superior Glass Website')
-    formData.append('from_name', 'Superior Glass Website')
-    formData.append('h-captcha-response', captchaToken)
+    const jsonData = {
+      access_key: '4b63ce26-8b65-44ca-9ff0-5dfa98b4c04e',
+      subject: 'New Lead from Superior Glass Website',
+      from_name: 'Superior Glass Website',
+      'h-captcha-response': captchaToken,
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      project_type: formData.get('project_type'),
+      message: formData.get('message'),
+    }
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(jsonData),
       })
 
       const data = await response.json()

@@ -14,19 +14,26 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
   const [errorMessage, setErrorMessage] = useState('')
   const [captchaToken, setCaptchaToken] = useState<string | null>(null)
 
+  const handleVerificationSuccess = (token: string) => {
+    setCaptchaToken(token)
+  }
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setStatus('submitting')
     setErrorMessage('')
 
+    if (!captchaToken) {
+      setStatus('error')
+      setErrorMessage('Please complete the captcha verification.')
+      return
+    }
+
     const formData = new FormData(e.currentTarget)
     formData.append('access_key', '4b63ce26-8b65-44ca-9ff0-5dfa98b4c04e')
     formData.append('subject', 'New Lead from Superior Glass Website')
     formData.append('from_name', 'Superior Glass Website')
-
-    if (captchaToken) {
-      formData.append('h-captcha-response', captchaToken)
-    }
+    formData.append('h-captcha-response', captchaToken)
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -38,7 +45,7 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
 
       if (data.success) {
         setStatus('success')
-        // Reset form
+        setCaptchaToken(null)
         ;(e.target as HTMLFormElement).reset()
       } else {
         setStatus('error')
@@ -53,6 +60,7 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
   const resetForm = () => {
     setStatus('idle')
     setErrorMessage('')
+    setCaptchaToken(null)
   }
 
   return (
@@ -228,8 +236,7 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
             <div style={{ display: 'flex', justifyContent: 'center', margin: '0' }}>
               <HCaptcha
                 sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
-                reCaptchaCompat={false}
-                onVerify={(token) => setCaptchaToken(token)}
+                onVerify={(token) => handleVerificationSuccess(token)}
                 onExpire={() => setCaptchaToken(null)}
               />
             </div>

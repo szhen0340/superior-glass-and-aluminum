@@ -476,7 +476,9 @@ function App() {
             >
               <div
                 style={{
-                  background: 'linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-concrete) 100%)',
+                  background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/images/projects/commercial/commercial_card.png')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                   border: '1px solid var(--border-steel)',
                   borderRadius: 'var(--radius-xl)',
                   padding: 'var(--space-2xl)',
@@ -486,11 +488,20 @@ function App() {
                   justifyContent: 'center',
                   alignItems: 'center',
                   textAlign: 'center',
+                  color: 'white',
                 }}
               >
-                <Building2 size={80} style={{ color: 'var(--border-steel-dark)', marginBottom: 'var(--space-xl)' }} />
-                <h3 style={{ marginBottom: 'var(--space-md)' }}>Commercial Grade</h3>
-                <p style={{ maxWidth: '300px' }}>
+                <div style={{
+                  background: 'rgba(255,255,255,0.1)',
+                  backdropFilter: 'blur(4px)',
+                  padding: '1rem',
+                  borderRadius: '50%',
+                  marginBottom: 'var(--space-xl)'
+                }}>
+                  <Building2 size={60} style={{ color: 'white' }} />
+                </div>
+                <h3 style={{ marginBottom: 'var(--space-md)', color: 'white' }}>Commercial Grade</h3>
+                <p style={{ maxWidth: '300px', color: 'rgba(255,255,255,0.9)' }}>
                   Built to withstand Chicago's demanding climate while meeting the highest architectural standards.
                 </p>
               </div>
@@ -526,7 +537,9 @@ function App() {
             >
               <div
                 style={{
-                  background: 'linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-concrete) 100%)',
+                  background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/images/residential/residential_card.png')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
                   border: '1px solid var(--border-steel)',
                   borderRadius: 'var(--radius-xl)',
                   padding: 'var(--space-2xl)',
@@ -536,11 +549,20 @@ function App() {
                   justifyContent: 'center',
                   alignItems: 'center',
                   textAlign: 'center',
+                  color: 'white',
                 }}
               >
-                <Home size={80} style={{ color: 'var(--color-superior-green-light)', marginBottom: 'var(--space-xl)' }} />
-                <h3 style={{ marginBottom: 'var(--space-md)' }}>Residential Elegance</h3>
-                <p style={{ maxWidth: '300px' }}>
+                <div style={{
+                  background: 'rgba(255,255,255,0.1)',
+                  backdropFilter: 'blur(4px)',
+                  padding: '1rem',
+                  borderRadius: '50%',
+                  marginBottom: 'var(--space-xl)'
+                }}>
+                  <Home size={60} style={{ color: 'white' }} />
+                </div>
+                <h3 style={{ marginBottom: 'var(--space-md)', color: 'white' }}>Residential Elegance</h3>
+                <p style={{ maxWidth: '300px', color: 'rgba(255,255,255,0.9)' }}>
                   Transform your home with custom glass solutions that blend beauty with functionality.
                 </p>
               </div>
@@ -710,13 +732,13 @@ function App() {
         }}
       >
         {/* Centered Overlay Title */}
-        <div 
-          style={{ 
-            position: 'absolute', 
-            top: '50%', 
-            left: '50%', 
-            transform: 'translate(-50%, -50%)', 
-            zIndex: 10, 
+        <div
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            zIndex: 10,
             textAlign: 'center',
             pointerEvents: 'none',
           }}
@@ -725,7 +747,7 @@ function App() {
             style={{
               display: 'inline-block',
               fontFamily: 'var(--font-primary)',
-              fontSize: '0.875rem',
+              fontSize: '1.5rem',
               fontWeight: 700,
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
@@ -745,48 +767,48 @@ function App() {
         </div>
 
         {/* Interactive Grid */}
-        <GridMotion 
+        <GridMotion
           items={[
-            '/images/projects/commercial_storefront.png',
-            '/images/projects/residential_glass.png',
+            '/images/projects/commercial_storefront1.png',
+            '/images/projects/office_interior1.png',
+            '/images/projects/curtain_wall1.png',
+            '/images/projects/shower_enclosure1.png',
+            '/images/projects/office_entrance1.png',
+            '/images/projects/glass_railings1.png',
+            '/images/projects/commercial_storefront2.png',
+            '/images/projects/glass_railings2.png',
+            '/images/projects/office_entrance2.png',
+            '/images/projects/commercial_storefront7.png',
+            '/images/projects/curtain_wall2.png',
+            '/images/projects/residential_glass2.png',
+            '/images/projects/commercial_storefront3.png',
+            '/images/projects/commercial_storefront5.png',
+            '/images/projects/office_interior1.png',
+            '/images/projects/commercial_storefront6.png',
+            '/images/projects/jewelry_interior1.png',
+            '/images/projects/commercial_storefront4.png',
+            '/images/projects/glass_railings3.png',
+            '/images/projects/shower_enclosure6.png',
+            '/images/projects/office_entrance3.png',
+            '/images/projects/shower_enclosure3.png',
+            '/images/projects/office_entrance4.png',
+            '/images/projects/office_entrance5.png',
+            '/images/projects/office_entrance6.png',
+            '/images/projects/shower_enclosure4.png',
+            '/images/projects/shower_enclosure5.png',
             '/images/projects/curtain_wall.png',
-            '/images/projects/shower_enclosure.png',
-            '/images/projects/office_entrance.png',
-            '/images/projects/glass_railings.png',
-            '/images/projects/commercial_storefront.png',
-            '/images/projects/residential_glass.png',
-            '/images/projects/curtain_wall.png',
-            '/images/projects/shower_enclosure.png',
-            '/images/projects/office_entrance.png',
-            '/images/projects/glass_railings.png',
-            '/images/projects/commercial_storefront.png',
-            '/images/projects/residential_glass.png',
-            '/images/projects/curtain_wall.png',
-            '/images/projects/shower_enclosure.png',
-            '/images/projects/office_entrance.png',
-            '/images/projects/glass_railings.png',
-            '/images/projects/commercial_storefront.png',
-            '/images/projects/residential_glass.png',
-            '/images/projects/curtain_wall.png',
-            '/images/projects/shower_enclosure.png',
-            '/images/projects/office_entrance.png',
-            '/images/projects/glass_railings.png',
-            '/images/projects/commercial_storefront.png',
-            '/images/projects/residential_glass.png',
-            '/images/projects/curtain_wall.png',
-            '/images/projects/shower_enclosure.png',
           ]}
           gradientColor="rgba(27, 94, 32, 0.3)"
         />
 
         {/* Bottom CTA */}
-        <div 
-          style={{ 
-            position: 'absolute', 
-            bottom: 'var(--space-2xl)', 
-            left: '50%', 
-            transform: 'translateX(-50%)', 
-            zIndex: 10 
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 'var(--space-2xl)',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 10
           }}
         >
           <a href="#contact" className="btn btn-primary">

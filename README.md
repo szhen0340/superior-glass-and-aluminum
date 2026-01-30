@@ -9,6 +9,8 @@ bun install
 bun --bun run start
 ```
 
+common issues solutions: https://stackoverflow.com/questions/72902668/bun-not-found-after-running-installation-script
+
 # Building For Production
 
 To build this application for production:

@@ -78,8 +78,8 @@ export default function Footer() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)', color: 'var(--text-dark-dim)' }}>
                 <Phone size={16} style={{ color: 'var(--color-superior-green)' }} />
-                <a href="tel:+13125551234" style={{ fontSize: '0.875rem', color: 'var(--text-dark-dim)', textDecoration: 'none' }}>
-                  (312) 555-1234
+                <a href="tel:+13127148919" style={{ fontSize: '0.875rem', color: 'var(--text-dark-dim)', textDecoration: 'none' }}>
+                  (312) 714-8919
                 </a>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)', color: 'var(--text-dark-dim)' }}>

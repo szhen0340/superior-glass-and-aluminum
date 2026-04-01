@@ -182,7 +182,7 @@ export default function ContactForm({ className = '' }: ContactFormProps) {
                   id="phone"
                   name="phone"
                   className="form-input"
-                  placeholder="(312) 555-1234"
+                  placeholder="(312) 714-8919"
                   disabled={status === 'submitting'}
                 />
               </div>

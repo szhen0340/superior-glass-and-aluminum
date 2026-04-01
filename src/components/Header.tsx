@@ -74,7 +74,7 @@ export default function Header() {
         {/* CTA Button */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <a
-            href="tel:+13125551234"
+            href="tel:+13127148919"
             className="btn btn-secondary"
             style={{ 
               padding: '0.5rem 1rem', 
@@ -84,7 +84,7 @@ export default function Header() {
             id="phone-btn"
           >
             <Phone size={16} />
-            <span>(312) 555-1234</span>
+            <span>(312) 714-8919</span>
           </a>
           <style>{`
             @media (min-width: 1024px) {

@@ -6,12 +6,12 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Commercial', href: '#commercial' },
-    { label: 'Residential', href: '#residential' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Services', href: '/#services' },
+    { label: 'Projects', href: '/#projects' },
+    { label: 'Commercial', href: '/#commercial' },
+    { label: 'Residential', href: '/#residential' },
+    { label: 'About', href: '/#about' },
+    { label: 'Contact', href: '/#contact' },
   ]
 
   return (
@@ -94,7 +94,7 @@ export default function Header() {
             }
           `}</style>
 
-          <a href="#contact" className="btn btn-primary" style={{ padding: '0.625rem 1.25rem', fontSize: '0.875rem' }}>
+          <a href="/#contact" className="btn btn-primary" style={{ padding: '0.625rem 1.25rem', fontSize: '0.875rem' }}>
             Get Quote
           </a>
 

@@ -9,38 +9,92 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GalleryIndexRouteImport } from './routes/gallery.index'
+import { Route as GalleryResidentialRouteImport } from './routes/gallery.residential'
+import { Route as GalleryCommercialRouteImport } from './routes/gallery.commercial'
 
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GalleryIndexRoute = GalleryIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => GalleryRoute,
+} as any)
+const GalleryResidentialRoute = GalleryResidentialRouteImport.update({
+  id: '/residential',
+  path: '/residential',
+  getParentRoute: () => GalleryRoute,
+} as any)
+const GalleryCommercialRoute = GalleryCommercialRouteImport.update({
+  id: '/commercial',
+  path: '/commercial',
+  getParentRoute: () => GalleryRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/gallery': typeof GalleryRouteWithChildren
+  '/gallery/commercial': typeof GalleryCommercialRoute
+  '/gallery/residential': typeof GalleryResidentialRoute
+  '/gallery/': typeof GalleryIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/gallery/commercial': typeof GalleryCommercialRoute
+  '/gallery/residential': typeof GalleryResidentialRoute
+  '/gallery': typeof GalleryIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/gallery': typeof GalleryRouteWithChildren
+  '/gallery/commercial': typeof GalleryCommercialRoute
+  '/gallery/residential': typeof GalleryResidentialRoute
+  '/gallery/': typeof GalleryIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/gallery'
+    | '/gallery/commercial'
+    | '/gallery/residential'
+    | '/gallery/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/gallery/commercial' | '/gallery/residential' | '/gallery'
+  id:
+    | '__root__'
+    | '/'
+    | '/gallery'
+    | '/gallery/commercial'
+    | '/gallery/residential'
+    | '/gallery/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GalleryRoute: typeof GalleryRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +102,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gallery/': {
+      id: '/gallery/'
+      path: '/'
+      fullPath: '/gallery/'
+      preLoaderRoute: typeof GalleryIndexRouteImport
+      parentRoute: typeof GalleryRoute
+    }
+    '/gallery/residential': {
+      id: '/gallery/residential'
+      path: '/residential'
+      fullPath: '/gallery/residential'
+      preLoaderRoute: typeof GalleryResidentialRouteImport
+      parentRoute: typeof GalleryRoute
+    }
+    '/gallery/commercial': {
+      id: '/gallery/commercial'
+      path: '/commercial'
+      fullPath: '/gallery/commercial'
+      preLoaderRoute: typeof GalleryCommercialRouteImport
+      parentRoute: typeof GalleryRoute
+    }
   }
 }
 
+interface GalleryRouteChildren {
+  GalleryCommercialRoute: typeof GalleryCommercialRoute
+  GalleryResidentialRoute: typeof GalleryResidentialRoute
+  GalleryIndexRoute: typeof GalleryIndexRoute
+}
+
+const GalleryRouteChildren: GalleryRouteChildren = {
+  GalleryCommercialRoute: GalleryCommercialRoute,
+  GalleryResidentialRoute: GalleryResidentialRoute,
+  GalleryIndexRoute: GalleryIndexRoute,
+}
+
+const GalleryRouteWithChildren =
+  GalleryRoute._addFileChildren(GalleryRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GalleryRoute: GalleryRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

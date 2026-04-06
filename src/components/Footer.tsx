@@ -5,12 +5,12 @@ export default function Footer() {
   const yearsInBusiness = currentYear - 2006
 
   const services = [
+    'Custom Fabrication',
+    'Aluminum Framing',
     'Storefront Systems',
     'Curtain Walls',
     'Glass Doors',
     'Shower Enclosures',
-    'Custom Fabrication',
-    'Aluminum Framing',
   ]
 
   return (
@@ -74,7 +74,7 @@ export default function Footer() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-sm)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)', color: 'var(--text-dark-dim)' }}>
                 <MapPin size={16} style={{ color: 'var(--color-superior-green)' }} />
-                <span style={{ fontSize: '0.875rem' }}>Chicago, IL 60601</span>
+                <span style={{ fontSize: '0.875rem' }}>3030 S Wentworth Ave, Chicago, IL 60616</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)', color: 'var(--text-dark-dim)' }}>
                 <Phone size={16} style={{ color: 'var(--color-superior-green)' }} />
@@ -84,8 +84,8 @@ export default function Footer() {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)', color: 'var(--text-dark-dim)' }}>
                 <Mail size={16} style={{ color: 'var(--color-superior-green)' }} />
-                <a href="mailto:info@superiorglass.com" style={{ fontSize: '0.875rem', color: 'var(--text-dark-dim)', textDecoration: 'none' }}>
-                  info@superiorglass.com
+                <a href="mailto:superiorglassaluminum@gmail.com" style={{ fontSize: '0.875rem', color: 'var(--text-dark-dim)', textDecoration: 'none' }} target="_blank">
+                  superiorglassaluminum@gmail.com
                 </a>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)', color: 'var(--text-dark-dim)' }}>
@@ -127,7 +127,7 @@ export default function Footer() {
               Markets We Serve
             </h4>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 'var(--space-sm)' }}>
-              {['Commercial Buildings', 'Retail Storefronts', 'Office Complexes', 'Residential Homes', 'Hospitality', 'Healthcare Facilities'].map((market) => (
+              {['Commercial Buildings', 'Retail Storefronts', 'Office Complexes', 'Residential Homes', 'Hospitality'].map((market) => (
                 <li key={market}>
                   <span style={{ color: 'var(--text-dark-dim)', fontSize: '0.875rem' }}>{market}</span>
                 </li>

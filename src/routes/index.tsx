@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import {
   Building2,
   Home,
@@ -27,6 +27,16 @@ export const Route = createFileRoute('/')({ component: App })
 function App() {
   const services = [
     {
+      icon: <Wrench size={32} />,
+      title: 'Custom Fabrication',
+      description: 'Bespoke aluminum and glass solutions tailored to your unique specifications.',
+    },
+    {
+      icon: <Ruler size={32} />,
+      title: 'Measurement & Design',
+      description: 'Professional on-site measurement and quotation services.',
+    },
+    {
       icon: <Building2 size={32} />,
       title: 'Storefront Systems',
       description: 'Complete commercial storefront solutions with aluminum framing and tempered glass.',
@@ -45,16 +55,6 @@ function App() {
       icon: <ShowerHead size={32} />,
       title: 'Shower Enclosures',
       description: 'Frameless and semi-frameless shower enclosures with premium hardware.',
-    },
-    {
-      icon: <Wrench size={32} />,
-      title: 'Custom Fabrication',
-      description: 'Bespoke aluminum and glass solutions tailored to your unique specifications.',
-    },
-    {
-      icon: <Ruler size={32} />,
-      title: 'Measurement & Design',
-      description: 'Professional on-site measurement and CAD design services.',
     },
   ]
 
@@ -501,9 +501,13 @@ function App() {
                   <Building2 size={60} style={{ color: 'white' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-md)', color: 'white' }}>Commercial Grade</h3>
-                <p style={{ maxWidth: '300px', color: 'rgba(255,255,255,0.9)' }}>
+                <p style={{ maxWidth: '300px', color: 'rgba(255,255,255,0.9)', marginBottom: 'var(--space-xl)' }}>
                   Built to withstand Chicago's demanding climate while meeting the highest architectural standards.
                 </p>
+                <Link to="/gallery/commercial" resetScroll={false} className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '1rem' }}>
+                  Go to Gallery
+                  <ArrowRight size={18} />
+                </Link>
               </div>
             </TiltedCard>
           </div>
@@ -562,9 +566,13 @@ function App() {
                   <Home size={60} style={{ color: 'white' }} />
                 </div>
                 <h3 style={{ marginBottom: 'var(--space-md)', color: 'white' }}>Residential Elegance</h3>
-                <p style={{ maxWidth: '300px', color: 'rgba(255,255,255,0.9)' }}>
+                <p style={{ maxWidth: '300px', color: 'rgba(255,255,255,0.9)', marginBottom: 'var(--space-xl)' }}>
                   Transform your home with custom glass solutions that blend beauty with functionality.
                 </p>
+                <Link to="/gallery/residential" resetScroll={false} className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '1rem' }}>
+                  Go to Gallery
+                  <ArrowRight size={18} />
+                </Link>
               </div>
             </TiltedCard>
 
@@ -761,9 +769,27 @@ function App() {
           <h2 style={{ marginBottom: 'var(--space-lg)', color: 'white', textShadow: '0 4px 20px rgba(0,0,0,0.7)' }}>
             Project Gallery
           </h2>
-          <p style={{ maxWidth: '500px', margin: '0 auto', color: 'rgba(255,255,255,0.8)', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+          <p style={{ maxWidth: '500px', margin: '0 auto', color: 'rgba(255,255,255,0.8)', textShadow: '0 2px 10px rgba(0,0,0,0.5)', marginBottom: 'var(--space-xl)' }}>
             Move your mouse to explore our portfolio
           </p>
+          <Link
+            to="/gallery"
+            resetScroll={false}
+            className="btn"
+            style={{
+              pointerEvents: 'auto',
+              background: 'var(--color-superior-green)',
+              color: 'white',
+              padding: '0.875rem 2rem',
+              fontSize: '1rem',
+              fontWeight: 700,
+              borderRadius: 'var(--radius-md)',
+              boxShadow: '0 4px 20px rgba(27, 94, 32, 0.4)',
+            }}
+          >
+            View Full Gallery
+            <ArrowRight size={18} />
+          </Link>
         </div>
 
         {/* Interactive Grid */}
@@ -811,8 +837,8 @@ function App() {
             zIndex: 10
           }}
         >
-          <a href="#contact" className="btn btn-primary">
-            Discuss Your Project
+          <a href="/#contact" className="btn btn-primary" style={{ padding: '0.875rem 2rem', fontSize: '1rem' }}>
+            Get a Quote
             <ArrowRight size={18} />
           </a>
         </div>

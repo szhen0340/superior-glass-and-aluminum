@@ -20,8 +20,10 @@ export default function Header() {
         <Link to="/" className="nav-logo">
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <img 
-              src="/logo.png" 
-              alt="Superior Glass & Aluminum Logo" 
+              src="/logo.webp" 
+              alt="Superior Glass & Aluminum Logo"
+              width="40"
+              height="40"
               style={{ 
                 height: '40px', 
                 width: 'auto',

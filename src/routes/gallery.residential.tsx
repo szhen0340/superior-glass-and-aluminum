@@ -11,14 +11,14 @@ function ResidentialGallery() {
   const [lightboxProject, setLightboxProject] = useState<{ images: { src: string; title: string }[]; startIndex: number } | null>(null)
 
   const projects = [
-    { id: 1, title: 'Frameless Shower Enclosure', images: ['/images/projects/shower_enclosure1.png'], category: 'Shower Enclosure', location: 'Oak Park, IL' },
-    { id: 2, title: 'Shower Enclosure', images: ['/images/projects/shower_enclosure2.png'], category: 'Shower Enclosure', location: 'Evanston, IL' },
-    { id: 3, title: 'Custom Shower Glass', images: ['/images/projects/shower_enclosure3.png'], category: 'Shower Enclosure', location: 'Skokie, IL' },
-    { id: 4, title: 'Shower Enclosure', images: ['/images/projects/shower_enclosure4.png'], category: 'Shower Enclosure', location: 'Park Ridge, IL' },
-    { id: 5, title: 'Frameless Shower', images: ['/images/projects/shower_enclosure5.png'], category: 'Shower Enclosure', location: 'Berwyn, IL' },
-    { id: 6, title: 'Premium Shower Glass', images: ['/images/projects/shower_enclosure6.png'], category: 'Shower Enclosure', location: 'Cicero, IL' },
-    { id: 7, title: 'Residential Glass Door', images: ['/images/projects/residential_glass2.png'], category: 'Glass Door', location: 'La Grange, IL' },
-    { id: 8, title: 'Glass Railings', images: ['/images/projects/glass_railings3.png'], category: 'Railings', location: 'Riverside, IL' },
+    { id: 1, title: 'Frameless Shower Enclosure', images: ['/images/projects/shower_enclosure1.webp'], category: 'Shower Enclosure', location: 'Oak Park, IL' },
+    { id: 2, title: 'Shower Enclosure', images: ['/images/projects/shower_enclosure2.webp'], category: 'Shower Enclosure', location: 'Evanston, IL' },
+    { id: 3, title: 'Custom Shower Glass', images: ['/images/projects/shower_enclosure3.webp'], category: 'Shower Enclosure', location: 'Skokie, IL' },
+    { id: 4, title: 'Shower Enclosure', images: ['/images/projects/shower_enclosure4.webp'], category: 'Shower Enclosure', location: 'Park Ridge, IL' },
+    { id: 5, title: 'Frameless Shower', images: ['/images/projects/shower_enclosure5.webp'], category: 'Shower Enclosure', location: 'Berwyn, IL' },
+    { id: 6, title: 'Premium Shower Glass', images: ['/images/projects/shower_enclosure6.webp'], category: 'Shower Enclosure', location: 'Cicero, IL' },
+    { id: 7, title: 'Residential Glass Door', images: ['/images/projects/residential_glass2.webp'], category: 'Glass Door', location: 'La Grange, IL' },
+    { id: 8, title: 'Glass Railings', images: ['/images/projects/glass_railings3.webp'], category: 'Railings', location: 'Riverside, IL' },
   ]
 
   const openLightbox = (project: typeof projects[0]) => {

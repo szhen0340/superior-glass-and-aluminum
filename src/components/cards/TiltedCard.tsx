@@ -18,7 +18,7 @@ export default function TiltedCard({
   perspective = 1000,
   scaleOnHover = 1.02,
 }: TiltedCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -30,9 +30,9 @@ export default function TiltedCard({
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [-rotateAmount, rotateAmount])
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!cardRef.current) return
+    if (!containerRef.current) return
 
-    const rect = cardRef.current.getBoundingClientRect()
+    const rect = containerRef.current.getBoundingClientRect()
     const width = rect.width
     const height = rect.height
     const mouseX = e.clientX - rect.left
@@ -52,15 +52,15 @@ export default function TiltedCard({
 
   return (
     <div
+      ref={containerRef}
       className={containerClassName}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
       style={{
         perspective: `${perspective}px`,
       }}
     >
       <motion.div
-        ref={cardRef}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
         style={{
           rotateX,
           rotateY,

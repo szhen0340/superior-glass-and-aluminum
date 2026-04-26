@@ -35,8 +35,10 @@ export default function Footer() {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: 'var(--space-lg)' }}>
               <img
-                src="/logo.png"
+                src="/logo.webp"
                 alt="Superior Glass & Aluminum Logo"
+                width="48"
+                height="48"
                 style={{
                   height: '48px',
                   width: 'auto',

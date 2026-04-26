@@ -18,7 +18,6 @@ import Waves from '../components/backgrounds/Waves'
 import GridMotion from '../components/backgrounds/GridMotion'
 import BlurText from '../components/text/BlurText'
 import SplitText from '../components/text/SplitText'
-import TiltedCard from '../components/cards/TiltedCard'
 import SpotlightCard from '../components/cards/SpotlightCard'
 import ContactForm from '../components/ContactForm'
 
@@ -468,48 +467,41 @@ function App() {
               </ul>
             </div>
 
-            <TiltedCard
-              containerClassName=""
-              className=""
-              rotateAmount={10}
-              scaleOnHover={1.02}
+            <div
+              style={{
+                background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/images/projects/commercial/commercial_card.webp')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                border: '1px solid var(--border-steel)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'var(--space-2xl)',
+                minHeight: '400px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                color: 'white',
+              }}
             >
-              <div
-                style={{
-                  background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/images/projects/commercial/commercial_card.png')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  border: '1px solid var(--border-steel)',
-                  borderRadius: 'var(--radius-xl)',
-                  padding: 'var(--space-2xl)',
-                  minHeight: '400px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  color: 'white',
-                }}
-              >
-                <div style={{
-                  background: 'rgba(255,255,255,0.1)',
-                  backdropFilter: 'blur(4px)',
-                  padding: '1rem',
-                  borderRadius: '50%',
-                  marginBottom: 'var(--space-xl)'
-                }}>
-                  <Building2 size={60} style={{ color: 'white' }} />
-                </div>
-                <h3 style={{ marginBottom: 'var(--space-md)', color: 'white' }}>Commercial Grade</h3>
-                <p style={{ maxWidth: '300px', color: 'rgba(255,255,255,0.9)', marginBottom: 'var(--space-xl)' }}>
-                  Built to withstand Chicago's demanding climate while meeting the highest architectural standards.
-                </p>
-                <Link to="/gallery/commercial" resetScroll={false} className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '1rem' }}>
-                  Go to Gallery
-                  <ArrowRight size={18} />
-                </Link>
+              <div style={{
+                background: 'rgba(255,255,255,0.1)',
+                backdropFilter: 'blur(4px)',
+                padding: '1rem',
+                borderRadius: '50%',
+                marginBottom: 'var(--space-xl)'
+              }}>
+                <Building2 size={60} style={{ color: 'white' }} />
               </div>
-            </TiltedCard>
+              <h3 style={{ marginBottom: 'var(--space-md)', color: 'white' }}>Commercial Grade</h3>
+              <p style={{ maxWidth: '300px', color: 'rgba(255,255,255,0.9)', marginBottom: 'var(--space-xl)' }}>
+                Built to withstand Chicago's demanding climate while meeting the highest architectural standards.
+              </p>
+              <Link to="/gallery/commercial" resetScroll={false} className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '1rem' }}>
+                Go to Gallery
+                <ArrowRight size={18} />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -533,48 +525,41 @@ function App() {
               alignItems: 'center',
             }}
           >
-            <TiltedCard
-              containerClassName=""
-              className=""
-              rotateAmount={10}
-              scaleOnHover={1.02}
+            <div
+              style={{
+                background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/images/residential/residential_card.webp')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                border: '1px solid var(--border-steel)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'var(--space-2xl)',
+                minHeight: '400px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                color: 'white',
+              }}
             >
-              <div
-                style={{
-                  background: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('/images/residential/residential_card.png')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  border: '1px solid var(--border-steel)',
-                  borderRadius: 'var(--radius-xl)',
-                  padding: 'var(--space-2xl)',
-                  minHeight: '400px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  textAlign: 'center',
-                  color: 'white',
-                }}
-              >
-                <div style={{
-                  background: 'rgba(255,255,255,0.1)',
-                  backdropFilter: 'blur(4px)',
-                  padding: '1rem',
-                  borderRadius: '50%',
-                  marginBottom: 'var(--space-xl)'
-                }}>
-                  <Home size={60} style={{ color: 'white' }} />
-                </div>
-                <h3 style={{ marginBottom: 'var(--space-md)', color: 'white' }}>Residential Elegance</h3>
-                <p style={{ maxWidth: '300px', color: 'rgba(255,255,255,0.9)', marginBottom: 'var(--space-xl)' }}>
-                  Transform your home with custom glass solutions that blend beauty with functionality.
-                </p>
-                <Link to="/gallery/residential" resetScroll={false} className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '1rem' }}>
-                  Go to Gallery
-                  <ArrowRight size={18} />
-                </Link>
+              <div style={{
+                background: 'rgba(255,255,255,0.1)',
+                backdropFilter: 'blur(4px)',
+                padding: '1rem',
+                borderRadius: '50%',
+                marginBottom: 'var(--space-xl)'
+              }}>
+                <Home size={60} style={{ color: 'white' }} />
               </div>
-            </TiltedCard>
+              <h3 style={{ marginBottom: 'var(--space-md)', color: 'white' }}>Residential Elegance</h3>
+              <p style={{ maxWidth: '300px', color: 'rgba(255,255,255,0.9)', marginBottom: 'var(--space-xl)' }}>
+                Transform your home with custom glass solutions that blend beauty with functionality.
+              </p>
+              <Link to="/gallery/residential" resetScroll={false} className="btn btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '1rem' }}>
+                Go to Gallery
+                <ArrowRight size={18} />
+              </Link>
+            </div>
 
             <div>
               <span
@@ -795,34 +780,34 @@ function App() {
         {/* Interactive Grid */}
         <GridMotion
           items={[
-            '/images/projects/commercial_storefront1.png',
-            '/images/projects/office_interior1.png',
-            '/images/projects/curtain_wall1.png',
-            '/images/projects/shower_enclosure1.png',
-            '/images/projects/office_entrance1.png',
-            '/images/projects/glass_railings1.png',
-            '/images/projects/commercial_storefront2.png',
-            '/images/projects/glass_railings2.png',
-            '/images/projects/office_entrance2.png',
-            '/images/projects/commercial_storefront7.png',
-            '/images/projects/curtain_wall2.png',
-            '/images/projects/residential_glass2.png',
-            '/images/projects/commercial_storefront3.png',
-            '/images/projects/commercial_storefront5.png',
-            '/images/projects/office_interior1.png',
-            '/images/projects/commercial_storefront6.png',
-            '/images/projects/jewelry_interior1.png',
-            '/images/projects/commercial_storefront4.png',
-            '/images/projects/glass_railings3.png',
-            '/images/projects/shower_enclosure6.png',
-            '/images/projects/office_entrance3.png',
-            '/images/projects/shower_enclosure3.png',
-            '/images/projects/office_entrance4.png',
-            '/images/projects/office_entrance5.png',
-            '/images/projects/office_entrance6.png',
-            '/images/projects/shower_enclosure4.png',
-            '/images/projects/shower_enclosure5.png',
-            '/images/projects/curtain_wall.png',
+            '/images/projects/commercial_storefront1.webp',
+            '/images/projects/office_interior1.webp',
+            '/images/projects/curtain_wall1.webp',
+            '/images/projects/shower_enclosure1.webp',
+            '/images/projects/office_entrance1.webp',
+            '/images/projects/glass_railings1.webp',
+            '/images/projects/commercial_storefront2.webp',
+            '/images/projects/glass_railings2.webp',
+            '/images/projects/office_entrance2.webp',
+            '/images/projects/commercial_storefront7.webp',
+            '/images/projects/curtain_wall2.webp',
+            '/images/projects/residential_glass2.webp',
+            '/images/projects/commercial_storefront3.webp',
+            '/images/projects/commercial_storefront5.webp',
+            '/images/projects/office_interior1.webp',
+            '/images/projects/commercial_storefront6.webp',
+            '/images/projects/jewelry_interior1.webp',
+            '/images/projects/commercial_storefront4.webp',
+            '/images/projects/glass_railings3.webp',
+            '/images/projects/shower_enclosure6.webp',
+            '/images/projects/office_entrance3.webp',
+            '/images/projects/shower_enclosure3.webp',
+            '/images/projects/office_entrance4.webp',
+            '/images/projects/office_entrance5.webp',
+            '/images/projects/office_entrance6.webp',
+            '/images/projects/shower_enclosure4.webp',
+            '/images/projects/shower_enclosure5.webp',
+            '/images/projects/curtain_wall1.webp',
           ]}
           gradientColor="rgba(27, 94, 32, 0.3)"
         />

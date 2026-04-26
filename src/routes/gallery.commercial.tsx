@@ -11,21 +11,21 @@ function CommercialGallery() {
   const [lightboxProject, setLightboxProject] = useState<{ images: { src: string; title: string }[]; startIndex: number } | null>(null)
 
   const projects = [
-    { id: 1, title: 'Commercial Storefront', images: ['/images/projects/commercial_storefront1.png'], category: 'Storefront', location: '1 S Wabash Ave, Chicago, IL 60603' },
-    { id: 2, title: 'Office Interior', images: ['/images/projects/office_interior1.png'], category: 'Interior', location: '3500 S Morgan St, Chicago, IL 60609' },
-    { id: 3, title: 'Curtain Wall', images: ['/images/projects/curtain_wall1.png'], category: 'Curtain Wall', location: 'Chicago, IL' },
-    { id: 4, title: 'Office Entrance', images: ['/images/projects/office_entrance1.png'], category: 'Entrance', location: 'Chicago, IL' },
-    { id: 5, title: 'Commercial Storefront', images: ['/images/projects/commercial_storefront2.png'], category: 'Storefront', location: 'Chicago, IL' },
-    { id: 6, title: 'Glass Railings', images: ['/images/projects/glass_railings1.png'], category: 'Railings', location: 'Chicago, IL' },
-    { id: 7, title: 'Commercial Storefront', images: ['/images/projects/commercial_storefront7.png'], category: 'Storefront', location: 'Chicago, IL' },
-    { id: 8, title: 'Curtain Wall', images: ['/images/projects/curtain_wall2.png'], category: 'Curtain Wall', location: 'Chicago, IL' },
-    { id: 9, title: 'Office Entrance', images: ['/images/projects/office_entrance2.png'], category: 'Entrance', location: 'Chicago, IL' },
-    { id: 10, title: 'Commercial Storefront', images: ['/images/projects/commercial_storefront3.png'], category: 'Storefront', location: 'Chicago, IL' },
-    { id: 11, title: 'Commercial Storefront', images: ['/images/projects/commercial_storefront5.png'], category: 'Storefront', location: 'Chicago, IL' },
-    { id: 12, title: 'Jewelry Store Interior', images: ['/images/projects/jewelry_interior1.png'], category: 'Interior', location: 'Chicago, IL' },
-    { id: 13, title: 'Office Entrance', images: ['/images/projects/office_entrance3.png'], category: 'Entrance', location: 'Chicago, IL' },
-    { id: 14, title: 'Office Entrance', images: ['/images/projects/office_entrance4.png'], category: 'Entrance', location: 'Chicago, IL' },
-    { id: 15, title: 'Glass Railings', images: ['/images/projects/glass_railings2.png'], category: 'Railings', location: 'Chicago, IL' },
+    { id: 1, title: 'Commercial Storefront', images: ['/images/projects/commercial_storefront1.webp'], category: 'Storefront', location: '1 S Wabash Ave, Chicago, IL 60603' },
+    { id: 2, title: 'Office Interior', images: ['/images/projects/office_interior1.webp'], category: 'Interior', location: '3500 S Morgan St, Chicago, IL 60609' },
+    { id: 3, title: 'Curtain Wall', images: ['/images/projects/curtain_wall1.webp'], category: 'Curtain Wall', location: 'Chicago, IL' },
+    { id: 4, title: 'Office Entrance', images: ['/images/projects/office_entrance1.webp'], category: 'Entrance', location: 'Chicago, IL' },
+    { id: 5, title: 'Commercial Storefront', images: ['/images/projects/commercial_storefront2.webp'], category: 'Storefront', location: 'Chicago, IL' },
+    { id: 6, title: 'Glass Railings', images: ['/images/projects/glass_railings1.webp'], category: 'Railings', location: 'Chicago, IL' },
+    { id: 7, title: 'Commercial Storefront', images: ['/images/projects/commercial_storefront7.webp'], category: 'Storefront', location: 'Chicago, IL' },
+    { id: 8, title: 'Curtain Wall', images: ['/images/projects/curtain_wall2.webp'], category: 'Curtain Wall', location: 'Chicago, IL' },
+    { id: 9, title: 'Office Entrance', images: ['/images/projects/office_entrance2.webp'], category: 'Entrance', location: 'Chicago, IL' },
+    { id: 10, title: 'Commercial Storefront', images: ['/images/projects/commercial_storefront3.webp'], category: 'Storefront', location: 'Chicago, IL' },
+    { id: 11, title: 'Commercial Storefront', images: ['/images/projects/commercial_storefront5.webp'], category: 'Storefront', location: 'Chicago, IL' },
+    { id: 12, title: 'Jewelry Store Interior', images: ['/images/projects/jewelry_interior1.webp'], category: 'Interior', location: 'Chicago, IL' },
+    { id: 13, title: 'Office Entrance', images: ['/images/projects/office_entrance3.webp'], category: 'Entrance', location: 'Chicago, IL' },
+    { id: 14, title: 'Office Entrance', images: ['/images/projects/office_entrance4.webp'], category: 'Entrance', location: 'Chicago, IL' },
+    { id: 15, title: 'Glass Railings', images: ['/images/projects/glass_railings2.webp'], category: 'Railings', location: 'Chicago, IL' },
   ]
 
   const openLightbox = (project: typeof projects[0]) => {

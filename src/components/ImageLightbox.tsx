@@ -169,6 +169,7 @@ export default function ImageLightbox({ images, currentIndex, onClose }: Lightbo
         <img
           src={current.src}
           alt={current.title}
+          loading="lazy"
           style={{
             maxWidth: '100%',
             maxHeight: 'calc(90vh - 60px)',
